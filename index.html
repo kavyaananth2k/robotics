@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoboForge — for Robotics and Automation</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="RoboForge specializes in precision CNC machined components, custom robotic grippers, kinematic mounting plates, and rapid global manufacturing for industrial automation.">
+  <meta name="keywords" content="roboforge, robotics, automation, grippers, mounting plates, CNC machining, rapid precision manufacturing">
+  <meta name="author" content="RoboForge">
+  
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpolygon points='20,2 36,11 36,29 20,38 4,29 4,11' fill='%23050a15' stroke='%2300D5FF' stroke-width='2.5'/%3E%3Ccircle cx='20' cy='20' r='5' fill='%2300D5FF'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Space Grotesk, Rajdhani, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Rajdhani:wght@600;700&family=Space+Grotesk:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Stylesheet (Exact Reference Design Implementation) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ======================================================================
+       SECTION 1: NAVIGATION BAR (Matching Reference Design)
+       ====================================================================== -->
+  <header>
+    <nav class="navbar navbar-expand-lg rf-navbar" id="mainNavbar" aria-label="Main Navigation">
+      <div class="container-xl">
+        <!-- Wordmark: roboforge -->
+        <a class="navbar-brand rf-brand-ref" href="#home" aria-label="RoboForge Home">
+          <span class="brand-wordmark-ref">robo<span>forge</span></span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list fs-2 text-cyan"></i>
+        </button>
+
+        <!-- Navigation Links & Contact Us Pill Button -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+          <ul class="navbar-nav align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link rf-nav-link-ref active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link rf-nav-link-ref" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link rf-nav-link-ref" href="#products">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link rf-nav-link-ref" href="#technologies">Technologies</a>
+            </li>
+            <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+              <a class="btn-pill-cyan" href="#contact" id="nav-contact-btn">
+                <span>Contact Us</span>
+                <i class="bi bi-arrow-up-right"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ====================================================================
+         SECTION 2: HERO SECTION (Reference: Big ROBOFORGE, Portal Ring & Cyborg)
+         ==================================================================== -->
+    <section class="hero-section-ref" id="home" aria-labelledby="hero-title">
+      <!-- Cyber wave lines & floating square particles -->
+      <div class="cyber-waves-layer" aria-hidden="true">
+        <div class="floating-square" style="top: 25%; left: 15%;"></div>
+        <div class="floating-square" style="top: 45%; left: 22%; animation-delay: -2s;"></div>
+        <div class="floating-square" style="top: 20%; right: 18%; animation-delay: -4s;"></div>
+        <div class="floating-square" style="top: 65%; right: 25%; animation-delay: -1s;"></div>
+      </div>
+
+      <!-- Left Social Icons Strip (in, f, o) -->
+      <div class="hero-social-strip" aria-label="Social Links">
+        <a href="#contact" class="hero-social-link" title="LinkedIn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="#contact" class="hero-social-link" title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#contact" class="hero-social-link" title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      </div>
+
+      <div class="container-xl position-relative text-center">
+        <!-- Giant Headline -->
+        <h1 class="hero-title-ref" id="hero-title">ROBOFORGE</h1>
+        
+        <!-- Subtitle -->
+        <div class="hero-subtitle-ref">FOR ROBOTICS AND AUTOMATION</div>
+        
+        <!-- RFQ Pill Action Button -->
+        <div class="mb-5">
+          <a class="btn-pill-cyan" href="#contact" id="hero-rfq-btn">
+            <span>Send Your RFQ</span>
+            <i class="bi bi-arrow-up-right ms-1"></i>
+          </a>
+        </div>
+
+        <!-- Centerpiece Visual: Portal Ring with Cyborg -->
+        <div class="hero-portal-container">
+          <img 
+            src="assets/images/hero-portal-cyborg.jpg" 
+            alt="Futuristic cyborg standing inside an electric cyan neon circular portal" 
+            class="hero-portal-img"
+            width="440"
+            height="440"
+            fetchpriority="high"
+          >
+          <div class="hero-portal-overlay-glow"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: "YOU DESIGN IT. WE CRAFT IT." INTERACTIVE PRODUCT DISPLAY
+         ==================================================================== -->
+    <section class="craft-preview-section" id="craft-preview">
+      <div class="container-xl">
+        <div class="craft-preview-box">
+          <div class="row align-items-center g-4">
+            
+            <!-- Left: Interactive Product Display with 4 Thumbnails -->
+            <div class="col-lg-5">
+              <div class="craft-main-display">
+                <img 
+                  id="craftMainImage"
+                  src="assets/images/mounting-plate.jpg" 
+                  alt="Precision CNC machined circular mounting component" 
+                  class="craft-main-img"
+                  width="380"
+                  height="280"
+                >
+                <!-- Thumbnail Selector Strip -->
+                <div class="craft-thumbnails-strip" role="tablist" aria-label="Product Preview Thumbnails">
+                  <button type="button" class="craft-thumb-btn active" onclick="switchCraftProduct('plate')" aria-label="Select Mounting Plate">
+                    <img src="assets/images/mounting-plate.jpg" alt="Mounting Plate Thumbnail">
+                  </button>
+                  <button type="button" class="craft-thumb-btn" onclick="switchCraftProduct('gripper')" aria-label="Select Gripper Jaw">
+                    <img src="assets/images/robotic-gripper.jpg" alt="Robotic Gripper Thumbnail">
+                  </button>
+                  <button type="button" class="craft-thumb-btn" onclick="switchCraftProduct('arm')" aria-label="Select Modular Arm">
+                    <img src="assets/images/modular-robot-arm.jpg" alt="Robotic Arm Thumbnail">
+                  </button>
+                  <button type="button" class="craft-thumb-btn" onclick="switchCraftProduct('cnc')" aria-label="Select CNC Knuckle">
+                    <img src="assets/images/cnc-components.jpg" alt="CNC Component Thumbnail">
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Exact Copy from Reference -->
+            <div class="col-lg-7">
+              <div class="craft-info-content">
+                <h2 class="craft-title">You design it. We craft it. Your clients make millions of parts.</h2>
+                <p class="craft-desc">
+                  While automated systems use standardized elements like robotic arms, motors, and vision devices, they all require a customized set of components tailored to meet the unique requirements of the end-user. This is where manual work and craftsmanship come in. Our skilled machinists and programmers use state-of-the-art CNC machines to produce low-quantity, customized jobs at competitive prices and with short delivery times.
+                </p>
+                <div>
+                  <a class="btn-pill-dark" href="#products">
+                    <span>Discover</span>
+                    <i class="bi bi-arrow-up-right ms-1"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: "OUR PARTS" FLUID GLASS PRESENTATION (Reference: 01 GRIPPERS & 02 PLATES)
+         ==================================================================== -->
+    <section class="our-parts-section" id="products" aria-labelledby="our-parts-title">
+      <!-- Massive Background Watermark -->
+      <div class="our-parts-watermark" aria-hidden="true">OUR PARTS</div>
+
+      <div class="container-xl position-relative">
+        
+        <!-- CARD 01 — GRIPPERS -->
+        <div class="parts-card-wrapper">
+          <div class="parts-card-box">
+            <div class="row align-items-center g-5">
+              
+              <!-- Content Left -->
+              <div class="col-lg-6">
+                <div class="part-number-badge">01</div>
+                <h3 class="part-title">GRIPPERS</h3>
+                <div class="part-lead">Ease of installation, robustness, reliability.</div>
+                <p class="part-body-text">
+                  Our team specializes in producing custom jaws and fingers precisely tailored to your design. No matter how complex the requirements may be.
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                  <button type="button" class="btn-pill-cyan-filled" onclick="openProductSpecs('rf-gripper')">
+                    <span>Explore Grippers</span>
+                    <i class="bi bi-arrow-up-right"></i>
+                  </button>
+                  <button type="button" class="btn-pill-dark" onclick="enquireProduct('Robotic Grippers', 'Custom Grippers & Jaws')">
+                    <span>Enquire For This Model</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Visual Right: Component with Fluid Glass Aura -->
+              <div class="col-lg-6">
+                <div class="fluid-glass-display">
+                  <div class="fluid-glass-swirl-bg" aria-hidden="true"></div>
+                  <div class="fluid-part-image-frame">
+                    <img 
+                      src="assets/images/robotic-gripper.jpg" 
+                      alt="Precision machined robotic gripper jaw component" 
+                      class="fluid-part-img"
+                      loading="lazy"
+                      width="500"
+                      height="375"
+                    >
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 02 — PLATES -->
+        <div class="parts-card-wrapper">
+          <div class="parts-card-box">
+            <div class="row align-items-center g-5 flex-lg-row-reverse">
+              
+              <!-- Content Right -->
+              <div class="col-lg-6">
+                <div class="part-number-badge">02</div>
+                <h3 class="part-title">PLATES</h3>
+                <div class="part-lead">The backbone of your system.</div>
+                <p class="part-body-text">
+                  Precise alignment is crucial. We specialize in producing mounting plates with outstanding precision within tight timelines.
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                  <button type="button" class="btn-pill-cyan-filled" onclick="openProductSpecs('rf-plate')">
+                    <span>Explore Plates</span>
+                    <i class="bi bi-arrow-up-right"></i>
+                  </button>
+                  <button type="button" class="btn-pill-dark" onclick="enquireProduct('Precision Mounting Plates', 'Kinematic Mounting Plates')">
+                    <span>Enquire For This Model</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Visual Left: Component with Fluid Glass Aura -->
+              <div class="col-lg-6">
+                <div class="fluid-glass-display">
+                  <div class="fluid-glass-swirl-bg" aria-hidden="true"></div>
+                  <div class="fluid-part-image-frame">
+                    <img 
+                      src="assets/images/cnc-components.jpg" 
+                      alt="Precision CNC machined mounting plate and sub-assembly" 
+                      class="fluid-part-img"
+                      loading="lazy"
+                      width="500"
+                      height="375"
+                    >
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: "MANUAL WORK at the Heart of AUTOMATION" (Reference Section)
+         ==================================================================== -->
+    <section class="manual-work-section" id="about" aria-labelledby="manual-work-heading">
+      <div class="container-xl">
+        
+        <!-- Header -->
+        <div class="manual-work-header">
+          <h2 class="manual-work-title" id="manual-work-heading">MANUAL WORK at the Heart of AUTOMATION</h2>
+          <div class="manual-work-subtitle">TRAINING &bull; KNOWLEDGE &bull; CRAFTSMANSHIP</div>
+        </div>
+
+        <!-- Visual Mosaic -->
+        <div class="manual-work-mosaic">
+          <!-- Main Left Image -->
+          <div class="mosaic-main-card">
+            <img 
+              src="assets/images/hero-robot-arm.jpg" 
+              alt="Advanced precision robotic arm in manufacturing environment" 
+              class="mosaic-main-img"
+              loading="lazy"
+              width="700"
+              height="450"
+            >
+          </div>
+          <!-- Right Stack -->
+          <div class="mosaic-sub-stack">
+            <div class="mosaic-sub-card">
+              <img 
+                src="assets/images/industry-manufacturing.jpg" 
+                alt="Automated smart factory floor with engineers and collaborative robots" 
+                class="mosaic-sub-img"
+                loading="lazy"
+                width="500"
+                height="220"
+              >
+            </div>
+            <div class="mosaic-sub-card">
+              <img 
+                src="assets/images/industry-aerospace.jpg" 
+                alt="Cleanroom precision aerospace robotic integration" 
+                class="mosaic-sub-img"
+                loading="lazy"
+                width="500"
+                height="220"
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Narrative Copy from Reference -->
+        <div class="manual-work-narrative">
+          <p>
+            Industrial automation is all about reducing manual work and increasing productivity. However, the development and manufacturing of automated systems requires a great deal of manual work and skilled craftsmanship. Unlike mass-produced consumer goods, automated systems are custom-made according to individual client specifications. As a result, the quantities of components required are generally very small, and finding a partner for this kind of jobs can be difficult and expensive. That's why we at RoboForge are here to help. We've spent the last decades perfecting our processes and technique, ensuring that you invest more time designing and less time worrying about costs, lead times, and the purchasing process.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: "TECHNOLOGIES" with Flowing Cyber Ribbon Waves (Reference)
+         ==================================================================== -->
+    <section class="technologies-section-ref" id="technologies" aria-labelledby="technologies-heading">
+      <!-- Flowing Cyber Waves SVG -->
+      <div class="cyber-waves-layer" aria-hidden="true">
+        <svg class="cyber-wave-svg" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M-100,200 C300,50 800,450 1540,150" stroke="#00D5FF" stroke-width="2.5" stroke-opacity="0.6"/>
+          <path d="M-100,240 C320,90 820,490 1540,190" stroke="#0099FF" stroke-width="2" stroke-opacity="0.4"/>
+          <path d="M-100,280 C340,130 840,530 1540,230" stroke="#0066CC" stroke-width="1.5" stroke-opacity="0.3"/>
+          <path d="M-100,320 C360,170 860,570 1540,270" stroke="#00D5FF" stroke-width="1" stroke-opacity="0.2"/>
+        </svg>
+      </div>
+
+      <div class="container-xl position-relative">
+        <h2 class="tech-heading-ref" id="technologies-heading">TECHNOLOGIES</h2>
+
+        <!-- 4 Column Circular-Icon Grid from Reference -->
+        <div class="tech-grid-ref">
+          
+          <!-- Node 1: CNC MACHINING -->
+          <div class="tech-node-card">
+            <div class="tech-circle-icon">
+              <i class="bi bi-gear-wide-connected"></i>
+            </div>
+            <h3 class="tech-node-title">CNC MACHINING</h3>
+            <ul class="tech-node-list">
+              <li>Turning + Milling up to 5-axis</li>
+              <li>EDM</li>
+              <li>Waterjet cutting</li>
+              <li>Laser cutting</li>
+            </ul>
+          </div>
+
+          <!-- Node 2: FORMING -->
+          <div class="tech-node-card">
+            <div class="tech-circle-icon">
+              <i class="bi bi-layers"></i>
+            </div>
+            <h3 class="tech-node-title">FORMING</h3>
+            <ul class="tech-node-list">
+              <li>Forging / Casting</li>
+              <li>Extrusion</li>
+              <li>Sheet forming</li>
+              <li>Stamping</li>
+            </ul>
+          </div>
+
+          <!-- Node 3: 3D PRINTING -->
+          <div class="tech-node-card">
+            <div class="tech-circle-icon">
+              <i class="bi bi-box"></i>
+            </div>
+            <h3 class="tech-node-title">3D PRINTING</h3>
+            <ul class="tech-node-list">
+              <li>Plastic</li>
+              <li>Metal</li>
+              <li>Ceramic</li>
+            </ul>
+          </div>
+
+          <!-- Node 4: TREATMENTS -->
+          <div class="tech-node-card">
+            <div class="tech-circle-icon">
+              <i class="bi bi-droplet-half"></i>
+            </div>
+            <h3 class="tech-node-title">TREATMENTS</h3>
+            <ul class="tech-node-list">
+              <li>Heat Treatment</li>
+              <li>Coating / plating</li>
+              <li>Surface finishing</li>
+              <li>Cleaning</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 7: GLOBAL EXPRESS LOGISTICS (Reference Bottom Section)
+         ==================================================================== -->
+    <section class="global-logistics-section" id="logistics" aria-labelledby="logistics-heading">
+      <div class="logistics-bg-container">
+        <img 
+          src="assets/images/modular-robot-arm.jpg" 
+          alt="Robotic arm in automated manufacturing facility" 
+          class="logistics-bg-img"
+          loading="lazy"
+          width="1920"
+          height="800"
+        >
+        <div class="logistics-overlay" aria-hidden="true"></div>
+      </div>
+
+      <div class="container-xl logistics-content">
+        <!-- Title & Subtitle from Reference -->
+        <h2 class="logistics-title" id="logistics-heading">Why RoboForge Is The Best Place To Buy Your Parts</h2>
+        <p class="logistics-subtitle">
+          The true value lies in expertise. With shipping fees having minimal impact on complex parts, clients worldwide opt for express shipment to receive their complete packages in just a few days.
+        </p>
+
+        <span class="logistics-sample-label">Sample rates for our bestselling packages:</span>
+
+        <!-- 5 Country Rate Cards with Flags & Transit Times -->
+        <div class="country-cards-row">
+          
+          <!-- USA -->
+          <div class="country-rate-card">
+            <div class="country-flag-icon">🇺🇸</div>
+            <div class="country-name">USA</div>
+            <div class="country-route">MILAN &rarr; HOUSTON</div>
+            <div class="country-transit">33 lbs &bull; 3–5 days</div>
+          </div>
+
+          <!-- GERMANY -->
+          <div class="country-rate-card">
+            <div class="country-flag-icon">🇩🇪</div>
+            <div class="country-name">GERMANY</div>
+            <div class="country-route">MILAN &rarr; D&Uuml;SSELDORF</div>
+            <div class="country-transit">15 Kg &bull; 24–48 hours</div>
+          </div>
+
+          <!-- KOREA -->
+          <div class="country-rate-card">
+            <div class="country-flag-icon">🇰🇷</div>
+            <div class="country-name">KOREA</div>
+            <div class="country-route">MILAN &rarr; SEOUL</div>
+            <div class="country-transit">15 Kg &bull; 3–5 days</div>
+          </div>
+
+          <!-- NETHERLANDS -->
+          <div class="country-rate-card">
+            <div class="country-flag-icon">🇳🇱</div>
+            <div class="country-name">NETHERLANDS</div>
+            <div class="country-route">MILAN &rarr; ROTTERDAM</div>
+            <div class="country-transit">15 Kg &bull; 24–48 hours</div>
+          </div>
+
+          <!-- JAPAN -->
+          <div class="country-rate-card">
+            <div class="country-flag-icon">🇯🇵</div>
+            <div class="country-name">JAPAN</div>
+            <div class="country-route">MILAN &rarr; TOKYO</div>
+            <div class="country-transit">15 Kg &bull; 3–5 days</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 8: SEND YOUR RFQ / CONTACT FORM (Matching Reference Style)
+         ==================================================================== -->
+    <section class="contact-section-ref" id="contact" aria-labelledby="contact-form-title">
+      <div class="container-xl">
+        <div class="text-center mb-5">
+          <h2 class="craft-title text-center" id="contact-form-title">Send Your RFQ</h2>
+          <p class="text-muted mx-auto" style="max-width: 600px;">
+            Submit your CAD models or component parameters below. Our engineering desk provides rapid DFM feedback and transparent quotes.
+          </p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="contact-box-ref">
+              <form id="projectContactForm" novalidate>
+                <div class="row g-3">
+                  
+                  <!-- Full Name -->
+                  <div class="col-md-6">
+                    <label for="fullName" class="rf-form-label-ref">Full Name *</label>
+                    <input type="text" class="rf-form-control-ref" id="fullName" placeholder="e.g. Elena Vance" required>
+                    <div class="invalid-feedback text-danger small mt-1">Please enter your full name.</div>
+                  </div>
+
+                  <!-- Company Name -->
+                  <div class="col-md-6">
+                    <label for="companyName" class="rf-form-label-ref">Company Name *</label>
+                    <input type="text" class="rf-form-control-ref" id="companyName" placeholder="e.g. Apex Industrial Systems" required>
+                    <div class="invalid-feedback text-danger small mt-1">Please enter your company name.</div>
+                  </div>
+
+                  <!-- Email Address -->
+                  <div class="col-md-6">
+                    <label for="emailAddress" class="rf-form-label-ref">Email Address *</label>
+                    <input type="email" class="rf-form-control-ref" id="emailAddress" placeholder="e.g. elena@apex-industrial.com" required>
+                    <div class="invalid-feedback text-danger small mt-1">Please enter a valid business email.</div>
+                  </div>
+
+                  <!-- Part Category Selector -->
+                  <div class="col-md-6">
+                    <label for="projectCategory" class="rf-form-label-ref">Part Category</label>
+                    <select class="rf-form-control-ref" id="projectCategory">
+                      <option value="grippers">01 — Custom Grippers &amp; Jaws</option>
+                      <option value="plates">02 — Kinematic Mounting Plates</option>
+                      <option value="cnc">03 — Custom 5-Axis CNC Components</option>
+                      <option value="arms">04 — Robotic Manipulator Hardware</option>
+                      <option value="other">05 — General RFQ / Custom Batch</option>
+                    </select>
+                  </div>
+
+                  <!-- Requirements -->
+                  <div class="col-12">
+                    <label for="projectRequirements" class="rf-form-label-ref">Project Specifications / RFQ Details *</label>
+                    <textarea class="rf-form-control-ref" id="projectRequirements" rows="4" placeholder="Detail part geometry, material (7075-T6, Ti-6Al-4V, Stainless), quantities, tolerances, or express delivery requirements..." required></textarea>
+                    <div class="invalid-feedback text-danger small mt-1">Please provide project specifications.</div>
+                  </div>
+
+                  <!-- Submit Pill Button -->
+                  <div class="col-12 text-center mt-4">
+                    <button type="submit" class="btn-pill-cyan-filled px-5" id="submitEnquiryBtn">
+                      <span>Submit RFQ</span>
+                      <i class="bi bi-arrow-up-right ms-2"></i>
+                    </button>
+                  </div>
+
+                </div>
+              </form>
+
+              <!-- Demonstration Alert Status -->
+              <div class="alert alert-info mt-4 d-none" id="submissionStatusCard" role="alert">
+                <h5 class="alert-heading text-dark fw-bold mb-1">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>RFQ Validated (Front-End Demonstration)
+                </h5>
+                <p class="mb-0 text-dark small" id="submissionStatusDetail">
+                  Your RFQ parameters have been successfully validated.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       FOOTER (Matching Reference Style)
+       ====================================================================== -->
+  <footer class="rf-footer-ref">
+    <div class="container-xl">
+      <div class="row g-4 align-items-center">
+        <!-- Brand -->
+        <div class="col-md-4 text-center text-md-start">
+          <span class="brand-wordmark-ref fs-4">robo<span>forge</span></span>
+          <p class="text-muted small mt-2 mb-0">High-precision custom manufacturing for robotics and automation.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-4 text-center">
+          <div class="d-flex justify-content-center gap-4">
+            <a href="#home" class="text-muted small">Home</a>
+            <a href="#about" class="text-muted small">About</a>
+            <a href="#products" class="text-muted small">Products</a>
+            <a href="#technologies" class="text-muted small">Technologies</a>
+            <a href="#contact" class="text-muted small">Contact</a>
+          </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="col-md-4 text-center text-md-end">
+          <div class="d-inline-flex gap-2">
+            <a href="#contact" class="hero-social-link"><i class="bi bi-linkedin"></i></a>
+            <a href="#contact" class="hero-social-link"><i class="bi bi-facebook"></i></a>
+            <a href="#contact" class="hero-social-link"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-ref-bottom">
+        <div>&copy; 2026 RoboForge. All rights reserved.</div>
+        <div>TRAINING &bull; KNOWLEDGE &bull; CRAFTSMANSHIP</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       PRODUCT SPECIFICATION MODAL
+       ====================================================================== -->
+  <div class="modal fade" id="specModal" tabindex="-1" aria-labelledby="specModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content rf-modal-ref">
+        <div class="modal-header rf-modal-header-ref">
+          <div>
+            <span class="text-cyan small fw-bold font-monospace" id="specModalCategory">CATEGORY</span>
+            <h3 class="modal-title fs-4 text-white" id="specModalTitle">Specifications</h3>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <p class="text-secondary mb-4" id="specModalDesc"></p>
+          <div class="table-responsive">
+            <table class="spec-table-ref">
+              <tbody id="specModalTable">
+                <!-- Populated dynamically via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+          <div class="d-flex justify-content-end gap-3 mt-4">
+            <button type="button" class="btn-pill-dark" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn-pill-cyan-filled" id="specModalEnquireBtn">
+              <span>Send RFQ For This Model</span>
+              <i class="bi bi-arrow-up-right ms-1"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom Main Script -->
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1054 @@
+/* ==========================================================================
+   ROBOFORGE — Premium Robotics & Industrial Automation Landing Page
+   Exact Reference Design Styling: Dark Cyber Aesthetic, Luminous Wave Lines,
+   Fluid Glass Product Envelopes, Portal Hero & Global Express Logistics
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design Tokens & Theme Variables
+   -------------------------------------------------------------------------- */
+:root {
+  /* Brand Palette from Reference */
+  --color-bg-space: #050a15;
+  --color-bg-deep: #081226;
+  --color-bg-surface: #0c1833;
+  --color-bg-card: rgba(12, 24, 51, 0.75);
+  --color-bg-card-hover: rgba(16, 32, 68, 0.88);
+  --color-bg-glass: rgba(6, 12, 26, 0.85);
+
+  /* Cyan & Electric Blue Glows */
+  --color-cyan: #00D5FF;
+  --color-cyan-glow: #00f0ff;
+  --color-cyan-electric: #00b4d8;
+  --color-blue-deep: #0066cc;
+  --color-cyan-subtle: rgba(0, 213, 255, 0.08);
+  --color-cyan-border: rgba(0, 213, 255, 0.3);
+  --glow-cyan-lg: 0 0 35px rgba(0, 213, 255, 0.35);
+  --glow-cyan-sm: 0 0 15px rgba(0, 213, 255, 0.4);
+
+  /* Silvers & Typography */
+  --color-silver: #D8E0E8;
+  --color-silver-muted: #8E9FB2;
+  --color-white: #FFFFFF;
+  --color-faint: #475B72;
+
+  /* Typography */
+  --font-display: 'Space Grotesk', -apple-system, sans-serif;
+  --font-heading: 'Rajdhani', sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Transitions */
+  --trans-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --trans-base: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --trans-smooth: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. Global Reset & Ambient Backgrounds
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-silver);
+  background-color: var(--color-bg-space);
+  background-image: 
+    radial-gradient(circle at 50% 0%, #0c1c3d 0%, transparent 60%),
+    radial-gradient(circle at 10% 40%, rgba(0, 213, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 90% 70%, rgba(0, 102, 204, 0.12) 0%, transparent 60%),
+    linear-gradient(180deg, #050a15 0%, #081226 50%, #050a15 100%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-white);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+a {
+  color: var(--color-cyan);
+  text-decoration: none;
+  transition: all var(--trans-fast);
+}
+
+a:hover {
+  color: var(--color-cyan-glow);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   3. Cyber Wave Backgrounds & Floating Tech Particles
+   -------------------------------------------------------------------------- */
+.cyber-waves-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.cyber-wave-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.45;
+}
+
+.floating-square {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(0, 213, 255, 0.35);
+  background: rgba(0, 213, 255, 0.08);
+  pointer-events: none;
+  animation: float-square 6s infinite ease-in-out alternate;
+}
+
+@keyframes float-square {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+  100% { transform: translateY(-15px) rotate(45deg); opacity: 0.8; }
+}
+
+/* --------------------------------------------------------------------------
+   4. Buttons & Badges (Matching Reference Pill Buttons)
+   -------------------------------------------------------------------------- */
+.btn-pill-cyan {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0.65rem 1.75rem;
+  border: 1px solid rgba(0, 213, 255, 0.6);
+  border-radius: 50px;
+  box-shadow: 0 0 15px rgba(0, 213, 255, 0.25);
+  transition: all var(--trans-base);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-pill-cyan:hover,
+.btn-pill-cyan:focus {
+  background: var(--color-cyan);
+  color: #040812;
+  border-color: var(--color-cyan);
+  box-shadow: 0 0 25px rgba(0, 213, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-pill-cyan-filled {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--color-cyan);
+  color: #040812;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.65rem 1.75rem;
+  border: 1px solid var(--color-cyan);
+  border-radius: 50px;
+  box-shadow: var(--glow-cyan-sm);
+  transition: all var(--trans-base);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-pill-cyan-filled:hover,
+.btn-pill-cyan-filled:focus {
+  background: var(--color-cyan-glow);
+  box-shadow: var(--glow-cyan-lg);
+  color: #02050b;
+  transform: translateY(-2px);
+}
+
+.btn-pill-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(12, 24, 51, 0.85);
+  color: var(--color-silver);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.65rem 1.5rem;
+  border: 1px solid rgba(216, 224, 232, 0.2);
+  border-radius: 50px;
+  transition: all var(--trans-base);
+  text-decoration: none;
+}
+
+.btn-pill-dark:hover {
+  background: rgba(0, 213, 255, 0.15);
+  color: var(--color-white);
+  border-color: var(--color-cyan);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   5. Section 1 — Navigation Bar (Reference Design)
+   -------------------------------------------------------------------------- */
+.rf-navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+  background-color: var(--color-bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 213, 255, 0.12);
+  padding: 1rem 0;
+  transition: all var(--trans-fast);
+}
+
+.rf-navbar.scrolled {
+  padding: 0.7rem 0;
+  background-color: rgba(4, 8, 18, 0.95);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid rgba(0, 213, 255, 0.25);
+}
+
+.rf-brand-ref {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand-wordmark-ref {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-white);
+  text-transform: lowercase;
+}
+
+.brand-wordmark-ref span {
+  color: var(--color-cyan);
+}
+
+.nav-link.rf-nav-link-ref {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-silver-muted);
+  letter-spacing: 0.04em;
+  padding: 0.45rem 1.1rem !important;
+  transition: color var(--trans-fast);
+  position: relative;
+}
+
+.nav-link.rf-nav-link-ref:hover,
+.nav-link.rf-nav-link-ref.active {
+  color: var(--color-white);
+}
+
+.nav-link.rf-nav-link-ref.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 2px;
+  background-color: var(--color-cyan);
+  box-shadow: 0 0 8px var(--color-cyan);
+}
+
+/* --------------------------------------------------------------------------
+   6. Section 2 — Hero Section with Luminous Ring Portal & Cyborg
+   -------------------------------------------------------------------------- */
+.hero-section-ref {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  padding-top: 3.5rem;
+  padding-bottom: 5.5rem;
+  overflow: hidden;
+}
+
+.hero-social-strip {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  z-index: 5;
+}
+
+.hero-social-link {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-silver-muted);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(216, 224, 232, 0.12);
+  border-radius: 50%;
+  transition: all var(--trans-fast);
+}
+
+.hero-social-link:hover {
+  color: var(--color-cyan);
+  border-color: var(--color-cyan);
+  box-shadow: 0 0 10px rgba(0, 213, 255, 0.4);
+}
+
+.hero-title-ref {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7.5vw, 6.25rem);
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--color-white);
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  text-shadow: 0 0 40px rgba(0, 213, 255, 0.2);
+}
+
+.hero-subtitle-ref {
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 1.6vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: var(--color-cyan);
+  text-transform: uppercase;
+  margin-bottom: 1.85rem;
+}
+
+/* Hero Center Portal Visual */
+.hero-portal-container {
+  position: relative;
+  max-width: 440px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 213, 255, 0.4);
+  box-shadow: 0 0 60px rgba(0, 213, 255, 0.3), 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+.hero-portal-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: transform var(--trans-smooth);
+}
+
+.hero-portal-container:hover .hero-portal-img {
+  transform: scale(1.03);
+}
+
+.hero-portal-overlay-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, transparent 60%, rgba(5, 10, 21, 0.6) 100%);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   7. Interactive "You design it. We craft it." Product Display Block
+   -------------------------------------------------------------------------- */
+.craft-preview-section {
+  padding: 4.5rem 0;
+  position: relative;
+}
+
+.craft-preview-box {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(0, 213, 255, 0.2);
+  border-radius: 8px;
+  padding: 2.75rem 2.5rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
+}
+
+.craft-main-display {
+  background: #040914;
+  border: 1px solid rgba(216, 224, 232, 0.12);
+  border-radius: 6px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.craft-main-img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  transition: opacity var(--trans-base);
+}
+
+.craft-thumbnails-strip {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.craft-thumb-btn {
+  width: 60px;
+  height: 60px;
+  background: #081226;
+  border: 1px solid rgba(216, 224, 232, 0.15);
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+  transition: all var(--trans-fast);
+  overflow: hidden;
+}
+
+.craft-thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.craft-thumb-btn:hover,
+.craft-thumb-btn.active {
+  border-color: var(--color-cyan);
+  box-shadow: 0 0 10px rgba(0, 213, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.craft-info-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding-left: 1.5rem;
+}
+
+.craft-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2.25rem);
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.25;
+  text-transform: none;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.25rem;
+}
+
+.craft-desc {
+  font-size: 0.95rem;
+  color: var(--color-silver-muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. Section 4 — "OUR PARTS" Fluid Glass Cards (Matching Reference)
+   -------------------------------------------------------------------------- */
+.our-parts-section {
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Massive Watermark Title */
+.our-parts-watermark {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 9.5vw, 8rem);
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  color: rgba(0, 213, 255, 0.05);
+  text-transform: uppercase;
+  position: absolute;
+  top: 1rem;
+  left: 5%;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+.parts-card-wrapper {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 4.5rem;
+}
+
+.parts-card-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+.parts-card-box {
+  background: radial-gradient(circle at 30% 30%, rgba(16, 34, 71, 0.6) 0%, rgba(6, 12, 26, 0.85) 100%);
+  border: 1px solid rgba(0, 213, 255, 0.2);
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  transition: all var(--trans-base);
+}
+
+.parts-card-box:hover {
+  border-color: rgba(0, 213, 255, 0.5);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), var(--glow-cyan-sm);
+}
+
+.part-number-badge {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-cyan);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.part-title {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--color-white);
+  margin-bottom: 0.75rem;
+}
+
+.part-lead {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-cyan-glow);
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+.part-body-text {
+  font-size: 0.95rem;
+  color: var(--color-silver-muted);
+  line-height: 1.7;
+  max-width: 440px;
+  margin-bottom: 2rem;
+}
+
+/* Fluid Glass Visual Composition */
+.fluid-glass-display {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fluid-glass-swirl-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at 50% 50%, rgba(0, 213, 255, 0.3) 0%, rgba(0, 102, 204, 0.15) 50%, transparent 75%);
+  filter: blur(24px);
+  pointer-events: none;
+}
+
+.fluid-part-image-frame {
+  position: relative;
+  z-index: 2;
+  max-width: 380px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 213, 255, 0.3);
+  transition: transform var(--trans-smooth);
+}
+
+.parts-card-box:hover .fluid-part-image-frame {
+  transform: scale(1.04) rotate(0.5deg);
+}
+
+.fluid-part-img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   9. "MANUAL WORK at the Heart of AUTOMATION" Section (Reference)
+   -------------------------------------------------------------------------- */
+.manual-work-section {
+  padding: 6.5rem 0;
+  position: relative;
+}
+
+.manual-work-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.manual-work-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-white);
+  margin-bottom: 0.65rem;
+}
+
+.manual-work-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--color-cyan);
+  text-transform: uppercase;
+}
+
+/* Android & Robotics Visual Mosaic */
+.manual-work-mosaic {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.mosaic-main-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 213, 255, 0.25);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  min-height: 380px;
+}
+
+.mosaic-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mosaic-sub-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mosaic-sub-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(216, 224, 232, 0.12);
+  height: calc(50% - 0.75rem);
+}
+
+.mosaic-sub-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.manual-work-narrative {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--color-silver);
+  line-height: 1.8;
+}
+
+/* --------------------------------------------------------------------------
+   10. Section 6 — "TECHNOLOGIES" with Cyber Ribbon Waves (Reference)
+   -------------------------------------------------------------------------- */
+.technologies-section-ref {
+  padding: 7.5rem 0;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 50%, #0a1836 0%, #050a15 80%);
+}
+
+.tech-heading-ref {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: var(--color-white);
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
+
+.tech-grid-ref {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.tech-node-card {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.tech-circle-icon {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 50%;
+  background: rgba(12, 24, 51, 0.8);
+  border: 2px solid var(--color-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-cyan);
+  font-size: 1.85rem;
+  box-shadow: 0 0 20px rgba(0, 213, 255, 0.35);
+  transition: all var(--trans-base);
+}
+
+.tech-node-card:hover .tech-circle-icon {
+  background: var(--color-cyan);
+  color: #040812;
+  box-shadow: 0 0 30px var(--color-cyan);
+  transform: scale(1.1);
+}
+
+.tech-node-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-white);
+  margin-bottom: 1rem;
+}
+
+.tech-node-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-silver-muted);
+  line-height: 1.8;
+}
+
+.tech-node-list li {
+  margin-bottom: 0.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   11. "Why RoboForge Is The Best Place To Buy Your Parts" (Global Logistics)
+   -------------------------------------------------------------------------- */
+.global-logistics-section {
+  position: relative;
+  padding: 7rem 0;
+  overflow: hidden;
+}
+
+.logistics-bg-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.logistics-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.35) contrast(1.15);
+}
+
+.logistics-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5, 10, 21, 0.85) 0%, rgba(8, 18, 38, 0.92) 100%);
+}
+
+.logistics-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.logistics-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.6vw, 2.85rem);
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: 0.04em;
+  margin-bottom: 1.25rem;
+}
+
+.logistics-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-silver-muted);
+  max-width: 780px;
+  margin: 0 auto 3.5rem auto;
+  line-height: 1.7;
+}
+
+.logistics-sample-label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--color-cyan);
+  margin-bottom: 2rem;
+  display: block;
+}
+
+/* Country Rate Flag Cards */
+.country-cards-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+}
+
+.country-rate-card {
+  background: rgba(12, 24, 51, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 213, 255, 0.25);
+  border-radius: 8px;
+  padding: 1.75rem 1rem;
+  text-align: center;
+  transition: all var(--trans-base);
+}
+
+.country-rate-card:hover {
+  border-color: var(--color-cyan);
+  background: rgba(18, 36, 75, 0.95);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), var(--glow-cyan-sm);
+}
+
+.country-flag-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+  display: inline-block;
+}
+
+.country-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+}
+
+.country-route {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-cyan);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.country-transit {
+  font-size: 0.8125rem;
+  color: var(--color-silver);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   12. Section 10 & 11 — Contact Form & Footer (Dark Cyber Theme)
+   -------------------------------------------------------------------------- */
+.contact-section-ref {
+  padding: 6.5rem 0;
+  position: relative;
+  background-color: var(--color-bg-space);
+}
+
+.contact-box-ref {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(0, 213, 255, 0.3);
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.rf-form-label-ref {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-silver);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.rf-form-control-ref {
+  background: rgba(5, 10, 21, 0.85);
+  border: 1px solid rgba(216, 224, 232, 0.2);
+  color: var(--color-white);
+  font-size: 0.95rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: 4px;
+  width: 100%;
+  transition: all var(--trans-fast);
+}
+
+.rf-form-control-ref:focus {
+  background: rgba(5, 10, 21, 0.95);
+  border-color: var(--color-cyan);
+  box-shadow: 0 0 0 3px rgba(0, 213, 255, 0.2);
+  outline: none;
+  color: var(--color-white);
+}
+
+select.rf-form-control-ref {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2300D5FF' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 14px;
+}
+
+select.rf-form-control-ref option {
+  background-color: #081226;
+  color: #FFFFFF;
+}
+
+.rf-footer-ref {
+  background-color: #03060c;
+  border-top: 1px solid rgba(0, 213, 255, 0.15);
+  padding: 4rem 0 2rem 0;
+}
+
+.footer-ref-bottom {
+  border-top: 1px solid rgba(216, 224, 232, 0.08);
+  padding-top: 1.75rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.8125rem;
+  color: var(--color-faint);
+}
+
+/* --------------------------------------------------------------------------
+   13. Technical Specification Modal
+   -------------------------------------------------------------------------- */
+.modal-content.rf-modal-ref {
+  background-color: #081226;
+  border: 1px solid var(--color-cyan);
+  color: var(--color-silver);
+  border-radius: 8px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), var(--glow-cyan-sm);
+}
+
+.modal-header.rf-modal-header-ref {
+  border-bottom: 1px solid rgba(0, 213, 255, 0.2);
+  padding: 1.25rem 1.75rem;
+}
+
+.spec-table-ref {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.spec-table-ref th,
+.spec-table-ref td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(216, 224, 232, 0.08);
+}
+
+.spec-table-ref th {
+  color: var(--color-cyan);
+  width: 40%;
+  background: rgba(0, 213, 255, 0.05);
+}
+
+.spec-table-ref td {
+  color: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   14. Responsive Layout Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+  .hero-social-strip {
+    display: none;
+  }
+  
+  .tech-grid-ref {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .country-cards-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .manual-work-mosaic {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-title-ref {
+    letter-spacing: 0.12em;
+  }
+  
+  .country-cards-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .tech-grid-ref {
+    grid-template-columns: 1fr;
+  }
+  
+  .craft-info-content {
+    padding-left: 0;
+    margin-top: 2rem;
+  }
+  
+  .parts-card-box {
+    padding: 2rem 1.5rem;
+  }
+  
+  .footer-ref-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
